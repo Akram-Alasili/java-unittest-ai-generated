@@ -1,0 +1,104 @@
+{
+  "standards": [
+    {
+      "id": "namingConventions",
+      "description": "Test method names should follow the pattern: 'shouldDoSomethingWhenCondition'. Names should describe the behavior being tested.",
+      "example": "void shouldThrowNullPointerExceptionWhenNullParameter()"
+    },
+    {
+      "id": "arrangeActAssert",
+      "description": "Follow the Arrange-Act-Assert (AAA) pattern for structuring tests.",
+      "example": "// Arrange\nint a = 5;\nint b = 3;\n// Act\nint result = calculator.add(a, b);\n// Assert\nassertEquals(\"Expected sum to be 8\", 8, result);"
+    },
+    {
+      "id": "oneAssertionPerTest",
+      "description": "Tests should generally have only one reason to fail, meaning only one assertion per test.",
+      "example": "void shouldAddTwoNumbersCorrectly() {\n  // Arrange\n  int a = 2;\n  int b = 3;\n  // Act\n  int result = calculator.add(a, b);\n  // Assert\n  assertEquals(\"Expected sum to be 5\", 5, result);\n}"
+    },
+    {
+      "id": "testDataIsolation",
+      "description": "Ensure tests are isolated and can be run independently in any order by setting up and tearing down test data properly.",
+      "example": "@BeforeEach void setUp() { ... }\n@AfterEach void tearDown() { ... }"
+    },
+    {
+      "id": "mockExternalServices",
+      "description": "If the method under test has dependencies, use mocking frameworks to create mock objects.",
+      "example": "pvoid shouldReturnExpectedValueFromService() {\n  Service mockService = mock(Service.class);\n  when(mockService.getData()).thenReturn(expectedData);\n  // Test method using mockService\n}"
+    },
+    {
+      "id": "testCoverage",
+      "description": "Each method should have at least one positive and one negative test case.",
+      "example": "void shouldCalculateSumForPositiveNumbers() { ... }"
+    },
+    {
+      "id": "exceptionHandling",
+      "description": "Tests for methods that throw exceptions must assert the expected exception type and message.",
+      "example": "@Test void shouldThrowExceptionForInvalidInput() { ... }"
+    },
+    {
+      "id": "documentation",
+      "description": "Each test class and method should have Javadoc comments explaining the purpose and logic of the test.",
+      "example": "/** Tests the add method for a null parameter scenario. */ void shouldThrowNullPointerExceptionWhenNullParameter() { ... }"
+    },
+    {
+      "id": "assertions",
+      "description": "Use meaningful assertion messages to clarify the intent of the test.",
+      "example": "assertEquals(\"Expected sum to be 5\", 5, result)"
+    },
+    {
+      "id": "edgeCaseCoverage",
+      "description": "Test edge cases such as empty arrays, single-element arrays, and boundary conditions.",
+      "example": "void shouldHandleEmptyArray() { ... }\nvoid shouldHandleSingleElementArray() { ... }"
+    },
+    {
+      "id": "loopConditionCoverage",
+      "description": "Ensure that loops are tested for zero iterations, one iteration, and multiple iterations.",
+      "example": "void shouldHandleZeroIterations() { ... }\nvoid shouldHandleSingleIteration() { ... }\nvoid shouldHandleMultipleIterations() { ... }"
+    },
+    {
+      "id": "fileNameConvention",
+      "description": "Unit test files should be named after the class they test with 'Test' appended at the end.",
+      "example": "class ClassNameTest { ... }"
+    },
+    {
+      "id": "statementCoverage",
+      "description": "Ensure that every executable statement in the code is executed by at least one test case.",
+      "example": "// Given a function with multiple executable statements\n// There should be unit tests that execute each statement at least once."
+    },
+    {
+      "id": "functionCoverage",
+      "description": "Each function in Java code must be covered by unit tests to ensure functionality correctness.",
+      "example": "// Given a function in a class\n// There should be corresponding unit tests covering all possible cases for this function."
+    },
+    {
+      "id": "branchCoverage",
+      "description": "All branches in Java code must be covered by unit tests to ensure all conditional logic is verified.",
+      "example": "// Given a function with conditional branches\n// There should be unit tests for each branch scenario."
+    },
+    {
+      "id": "pathCoverage",
+      "description": "Ensure that every possible path through the code is tested, including loops, conditionals, and exceptions.",
+      "example": "// Given a function with multiple paths (e.g., if-else conditions, loops)\n// There should be unit tests that cover each path."
+    },
+    {
+      "id": "codeCoverage",
+      "description": "Ensure that every line of code and every branch in the code is executed by at least one test case. Use a code coverage tool to measure the percentage of your code that is covered by tests, and aim for a high coverage percentage.",
+      "example": "// Given a function with multiple paths (e.g., if-else conditions, loops)\n// There should be unit tests that cover each path."
+    },
+    {
+      "id": "mainMethodCoverage",
+      "description": "Ensure that the logic in the main method is fully covered by tests. This includes testing the method under different conditions and with different arguments.",
+      "example": "// Given a main method in a class\n// There should be corresponding unit tests covering all possible cases for this method."
+    },
+    {
+      "id": "exceptionCoverage",
+      "description": "Ensure that all methods which can throw exceptions are tested under conditions that should result in exceptions being thrown.",
+      "example": "void shouldThrowExceptionForInvalidInput() { ... }\nvoid shouldHandleExceptionScenario() { ... }"
+    },
+    {
+      "id": "testsShouldBeFast",
+      "description": "Tests should be designed to run quickly. Slow tests can become a bottleneck in the development process.",
+      "example": "// Ensure that test data setup is minimal and efficient to allow fast test execution."
+    }
+  ]
+}
